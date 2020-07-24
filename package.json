@@ -1,0 +1,20 @@
+{
+  "name": "rockpaperscissors",
+  "version": "1.0.0",
+  "description": "rock paper scissors game with socket.io to play with friends",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Prithvi Velpuri",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "randomatic": "^3.1.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
