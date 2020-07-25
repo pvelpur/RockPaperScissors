@@ -33,7 +33,7 @@ const addUser = ({id, username, roomid}) => {
     }
 
     // Store user
-    const user = {id, username, roomid, score:3}
+    const user = {id, username, roomid, score:0, option:''}
     users.push(user)
     return { user }
 }
@@ -54,6 +54,20 @@ const getUsersInRoom = (roomid) => {
     return users.filter(user => user.roomid === roomid)
 }
 
+const setUserOption = ({id, option}) => {
+    const index = users.findIndex((user) => user.id === id)
+    users[index].option = option
+}
+
+const resetUserOptions = (roomid) => {
+    const usersInRoom = getUsersInRoom(roomid)
+    const len = usersInRoom.length
+    for (let i=0; i<len; i++) {
+        //changes the original array... weird lol
+        usersInRoom[i].option = '';
+    }
+}
+
 const resetUserScore = (roomid) => {
     const usersInRoom = getUsersInRoom(roomid)
     const len = usersInRoom.length
@@ -67,5 +81,7 @@ module.exports = {
     removeUser,
     getUser,
     getUsersInRoom,
-    resetUserScore
+    resetUserScore,
+    resetUserOptions,
+    setUserOption
 }

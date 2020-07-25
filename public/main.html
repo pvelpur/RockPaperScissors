@@ -13,15 +13,17 @@
         <button class="reset">Reset Score</button>
         <div id="players" class="score">
         </div>
+        
         <div class="match">
             <h2 class="winner">Choose an option</h2>
-            <img src="./img/rock.png" alt="" class="player1-hand">
-            <img src="./img/rock.png" alt="" class="player2-hand">
-        </div>
-        <div class="options">
-            <button class="rock">rock</button>
-            <button class="paper">paper</button>
-            <button class="scissors">scissors</button>
+            <div class="hands">
+
+            </div>
+            <div class="options">
+                <button class="rock" disabled>rock</button>
+                <button class="paper" disabled>paper</button>
+                <button class="scissors">scissors</button>
+            </div>
         </div>
 
     </section>
@@ -32,6 +34,12 @@
                 <h2 class="player__name">{{username}}</h2>
                 <p class="player__score">{{score}}</p>
         </div>
+        {{/users}}
+    </script>
+
+    <script id="playerHand-template" type="text/html">
+        {{#users}}
+            <img src="./img/rock.png" alt="" class={{id}}>
         {{/users}}
     </script>
 
